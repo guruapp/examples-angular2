@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/Script.js"></script>
+    <script src="Scripts/filters.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles.css">
+    <meta charset="UTF-8">
+    <title>Document 1</title>
+
+</head>
+<body >
+<div ng-controller="myCtrl">
+Search <input type="text" placeholder="Search name and gender" ng-model="searchText" />
+
+    <br />
+    <br />
+    <table>
+        <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+                Salary
+            </th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="employe in employees ">
+            <td>{{employe.name}}</td>
+            <td>{{employe.gender | gender}}</td>
+            <td>{{employe.salary}}</td>
+        </tr>
+
+        </tbody>
+
+    </table>
+
+
+ </div>
+
+</body>
+</html>
