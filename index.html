@@ -9,46 +9,21 @@
     <title>Document 1</title>
 
 </head>
-<body >
+<body
 
-<div>
+<div ng-controller="myCtrl">
 
-    <div ng-init="employees = [
-    {name:'Vadim',gender: 'male', salary:5500},
-    {name:'Sara',gender: 'female', salary:6800},
-    {name:'Mark',gender: 'male', salary:5700},
-    {name:'Pam',gender: 'male', salary:5300},
-    {name:'Todd',gender: 'male', salary:5200}
-    ]">
+    <ul>
+        <li ng-repeat="country in countries" ng-init="parentIndex = $index">
+            {{country.name}}
 
-Hide Salary<input type="checkbox" ng-model="hideSalary" >
-    <br />
-    <br />
-    <table>
-        <thead>
-        <tr>
-            <th>
-                Name
-            </th>
-            <th>
-                Gender
-            </th>
-            <th>
-                Salary
-            </th>
+            <ul><li ng-repeat="city in country.cities">{{city.name}}</li></ul>
+        </li>
 
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="employe in employees ">
-            <td>{{employe.name}}</td>
-            <td>{{employe.gender}}</td>
-            <td ng-hide="hideSalary">{{employe.salary}}</td>
-        </tr>
+    </ul>
 
-        </tbody>
 
-    </table>
+
 
 
  </div>
