@@ -10,7 +10,16 @@
 
 </head>
 <body >
-<div ng-controller="myCtrl">
+
+<div>
+
+    <div ng-init="employees = [
+    {name:'Vadim',gender: 'male', salary:5500},
+    {name:'Sara',gender: 'female', salary:6800},
+    {name:'Mark',gender: 'male', salary:5700},
+    {name:'Pam',gender: 'male', salary:5300},
+    {name:'Todd',gender: 'male', salary:5200}
+    ]">
 
 Hide Salary<input type="checkbox" ng-model="hideSalary" >
     <br />
@@ -33,9 +42,8 @@ Hide Salary<input type="checkbox" ng-model="hideSalary" >
         <tbody>
         <tr ng-repeat="employe in employees ">
             <td>{{employe.name}}</td>
-            <td>{{employe.gender | gender}}</td>
+            <td>{{employe.gender}}</td>
             <td ng-hide="hideSalary">{{employe.salary}}</td>
-            <td ng-show="hideSalary">####</td>
         </tr>
 
         </tbody>
