@@ -7,5 +7,7 @@ app = angular.module("myApp",[])
             {name:"Pam",gender: "female", salary:5300},
             {name:"Todd",gender: "male", salary:5200}
         ]
+        
+        $scope.employeeView = "employeeTable.html";
 
     })
